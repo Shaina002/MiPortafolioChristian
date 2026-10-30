@@ -1,0 +1,235 @@
+/* Configuración general de la página */
+body {
+    background-color: #121212; /* Fondo gris oscuro / negro */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Marquesina y Contenedor Principal con doble línea */
+.marquesina-marco {
+    border: 6px double #33ff77; /* Borde doble verde claro */
+    padding: 30px 40px;
+    text-align: center;
+    border-radius: 12px;
+    background-color: #1a1a1a;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+    max-width: 900px;
+    width: 100%;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Renglones de texto de Portada */
+.titulo-portafolio {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 24pt;
+    color: #90ee90; /* Verde claro */
+    margin: 10px 0;
+    text-transform: lowercase;
+}
+
+.nombre-alumno {
+    font-family: 'Arial Black', Gadget, sans-serif;
+    font-size: 16pt;
+    color: #ffeb3b; /* Amarillo claro */
+    margin: 12px 0;
+}
+
+.campus-subtitulo {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    color: #5dade2; /* Azul pastel */
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+/* Estilo del logotipo UVM */
+.contenedor-logo {
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-uvm {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    filter: drop-shadow(0px 4px 10px rgba(0, 0, 0, 0.5));
+    transition: transform 0.3s ease;
+}
+
+.logo-uvm:hover {
+    transform: scale(1.03);
+}
+
+/* ==========================================
+   ESTILOS DE LA GALERÍA DE IMÁGENES (A5.1)
+   ========================================== */
+
+/* Cuadrícula de 3 columnas responsiva */
+.galeria-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Imagen en la cuadrícula */
+.galeria-item {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border: 3px solid #33ff77; /* Borde verde para encajar con el estilo */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efecto hover: agranda la imagen al pasar el mouse */
+.galeria-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(51, 255, 119, 0.4);
+}
+
+/* Adaptación responsiva para dispositivos pequeños */
+@media (max-width: 768px) {
+    .galeria-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .galeria-grid {
+        grid-template-columns: 1fr; /* 1 columna en celulares */
+    }
+}
+
+/* Ventana emergente Modal (JavaScript) */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85); /* Fondo oscuro semitransparente */
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Contenido de la imagen modal centrada */
+.modal-contenido {
+    max-width: 85%;
+    max-height: 80vh;
+    border: 4px solid #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.3);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Botón de cerrar (X) */
+.cerrar-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.cerrar-modal:hover {
+    color: #ff5555;
+}
+
+/* Estilos de la marquesina interactiva */
+.caja-marquesina {
+    width: 90%;
+    max-width: 650px;
+    background-color: #000000;
+    border: 4px double #2ecc71;
+    padding: 15px;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 15px;
+    border-radius: 6px;
+    text-align: center;
+}
+
+#textoMarquesina {
+    display: inline-block;
+    font-size: 16pt;
+    font-weight: bold;
+    color: #ffeb3b;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* ==========================================
+   ESTILOS DE BOTONES
+   ========================================== */
+.contenedor-botones {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 12px 24px;
+    font-size: 13pt;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+    box-shadow: 0 5px 0px rgba(0, 0, 0, 0.7);
+    transition: all 0.1s ease;
+    user-select: none;
+}
+
+.btn-verde {
+    background-color: #2ecc71;
+    color: #000000;
+}
+
+.btn-verde:hover {
+    background-color: #27ae60;
+}
+
+.btn-azul {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+.btn-azul:hover {
+    background-color: #2980b9;
+}
+
+.btn:active {
+    transform: translateY(4px);
+    box-shadow: 0 1px 0px rgba(0, 0, 0, 0.7);
+}

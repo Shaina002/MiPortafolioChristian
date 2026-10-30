@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marquesina con JavaScript</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+    <div class="marquesina-marco">
+        <h1 class="titulo-portafolio" style="text-transform: none;">Demostración de Marquesina</h1>
+        <p style="color: #cccccc; margin-top: -5px;">JavaScript animando texto en tiempo real</p>
+
+        <!-- Logotipo UVM -->
+        <div class="contenedor-logo">
+            <img id="imgLogo" class="logo-uvm" src="logotipo.jpg" alt="Logotipo UVM" onerror="this.style.display='none'; document.getElementById('svgLogo').style.display='block';">
+            
+            <svg id="svgLogo" class="logo-uvm" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <defs>
+                    <linearGradient id="uvmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#e51a24" />
+                        <stop offset="100%" stop-color="#990000" />
+                    </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="95" fill="url(#uvmGrad)" />
+                <circle cx="100" cy="100" r="88" fill="none" stroke="#ffffff" stroke-width="4" />
+                <g fill="#ffffff">
+                    <path d="M 42 75 L 56 75 L 56 102 C 56 112 62 117 70 117 C 78 117 84 112 84 102 L 84 75 L 98 75 L 98 103 C 98 120 86 128 70 128 C 54 128 42 120 42 103 Z" />
+                    <path d="M 94 75 L 108 75 L 118 110 L 128 75 L 142 75 L 126 126 L 110 126 Z" />
+                    <path d="M 124 75 L 138 75 L 148 102 L 158 75 L 172 75 L 172 126 L 159 126 L 159 95 L 151 116 L 145 116 L 137 95 L 137 126 L 124 126 Z" />
+                </g>
+            </svg>
+        </div>
+
+        <!-- Contenedor donde se mueve el texto -->
+        <div class="caja-marquesina">
+            <span id="textoMarquesina">Cargando mensaje...</span>
+        </div>
+    </div>
+
+    <div class="contenedor-botones">
+        <a href="index.html" class="btn btn-azul">Volver a la Portada</a>
+        <a href="galeria_imagenes.html" class="btn btn-verde">Galería de Imágenes</a>
+    </div>
+
+    <!-- Script de JavaScript para la marquesina -->
+    <script>
+        const fechaActual = new Date().toLocaleDateString('es-MX', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric'
+        });
+
+        let mensaje = ` ¡Bienvenido a Mi Portafolio JS! | Hoy es ${fechaActual} | Campus Guadalajara Sur | UVM `;
+        
+        const elemento = document.getElementById("textoMarquesina");
+        
+        function animarMarquesina() {
+            mensaje = mensaje.substring(1) + mensaje.charAt(0);
+            elemento.textContent = mensaje;
+        }
+
+        setInterval(animarMarquesina, 150);
+    </script>
+</body>
+</html>
