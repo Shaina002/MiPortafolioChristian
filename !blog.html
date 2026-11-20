@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog: Métricas y Datos - Portafolio JS</title>
+    <link rel="stylesheet" href="estilos.css">
+    <style>
+        .blog-contenedor {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        .entrada-blog {
+            background-color: #242424;
+            border-left: 5px solid #33ff77;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            transition: transform 0.2s ease;
+        }
+
+        .entrada-blog:hover {
+            transform: translateX(5px);
+        }
+
+        .entrada-titulo {
+            font-family: 'Arial Black', Gadget, sans-serif;
+            font-size: 14pt;
+            color: #ffeb3b;
+            margin: 0 0 8px 0;
+        }
+
+        .entrada-meta {
+            font-size: 10pt;
+            color: #5dade2;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        .entrada-texto {
+            font-size: 11pt;
+            color: #e0e0e0;
+            line-height: 1.5;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="marquesina-marco">
+        <h1 class="titulo-portafolio">blog: espacio de ideas y métricas</h1>
+        <h2 class="nombre-alumno">Gutiérrez Padilla Christian Abdiel</h2>
+        <h3 class="campus-subtitulo">Campus Guadalajara Sur</h3>
+
+        <!-- Logotipo UVM -->
+        <div class="contenedor-logo">
+            <img id="imgLogo" class="logo-uvm" src="logotipo.jpg" alt="Logotipo UVM" onerror="this.style.display='none'; document.getElementById('svgLogo').style.display='block';">
+            
+            <svg id="svgLogo" class="logo-uvm" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="display: none;">
+                <defs>
+                    <linearGradient id="uvmGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#e51a24" />
+                        <stop offset="100%" stop-color="#990000" />
+                    </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="95" fill="url(#uvmGrad)" />
+                <circle cx="100" cy="100" r="88" fill="none" stroke="#ffffff" stroke-width="4" />
+                <g fill="#ffffff">
+                    <path d="M 42 75 L 56 75 L 56 102 C 56 112 62 117 70 117 C 78 117 84 112 84 102 L 84 75 L 98 75 L 98 103 C 98 120 86 128 70 128 C 54 128 42 120 42 103 Z" />
+                    <path d="M 94 75 L 108 75 L 118 110 L 128 75 L 142 75 L 126 126 L 110 126 Z" />
+                    <path d="M 124 75 L 138 75 L 148 102 L 158 75 L 172 75 L 172 126 L 159 126 L 159 95 L 151 116 L 145 116 L 137 95 L 137 126 L 124 126 Z" />
+                </g>
+            </svg>
+        </div>
+
+        <!-- Entradas del Blog -->
+        <div class="blog-contenedor">
+            <article class="entrada-blog">
+                <h4 class="entrada-titulo">1. Métricas web que realmente importan en un portafolio estudiantil</h4>
+                <div class="entrada-meta">Por Christian Abdiel Gutiérrez Padilla | 20 de noviembre de 2026</div>
+                <p class="entrada-texto">
+                    Analizamos cómo medir el rendimiento real de nuestro sitio web más allá de las visitas: tiempo de permanencia, interacción con los botones y velocidad de carga mediante código limpio.
+                </p>
+            </article>
+
+            <article class="entrada-blog">
+                <h4 class="entrada-titulo">2. Datos con propósito: Visualizando el impacto ambiental en los océanos</h4>
+                <div class="entrada-meta">Por Christian Abdiel Gutiérrez Padilla | 20 de noviembre de 2026</div>
+                <p class="entrada-texto">
+                    Cómo transformar tablas de datos complejos sobre contaminación marina (2020-2024) en gráficas interactivas con Chart.js para generar conciencia real en los usuarios.
+                </p>
+            </article>
+        </div>
+    </div>
+
+    <!-- Botones de Navegación -->
+    <div class="contenedor-botones">
+        <a href="index.html" class="btn btn-azul">Volver a la Portada</a>
+        <a href="galeria_imagenes.html" class="btn btn-verde">Galería Modal</a>
+        <a href="carrusel.html" class="btn btn-azul">Evidencias y Gráfica</a>
+    </div>
+
+</body>
+</html>
