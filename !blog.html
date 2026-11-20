@@ -48,6 +48,23 @@
             line-height: 1.5;
             margin: 0;
         }
+
+        /* Estilo de la imagen de la pizarra dentro del blog */
+        .pizarra-preview {
+            width: 100%;
+            max-width: 700px;
+            border: 3px solid #33ff77;
+            border-radius: 8px;
+            margin-top: 15px;
+            cursor: pointer;
+            display: block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pizarra-preview:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(51, 255, 119, 0.4);
+        }
     </style>
 </head>
 <body>
@@ -95,7 +112,23 @@
                     Cómo transformar tablas de datos complejos sobre contaminación marina (2020-2024) en gráficas interactivas con Chart.js para generar conciencia real en los usuarios.
                 </p>
             </article>
+
+            <!-- Entrada 3: Evidencia de Lluvia de Ideas y Votación -->
+            <article class="entrada-blog">
+                <h4 class="entrada-titulo">3. Lluvia de Ideas Colaborativa y Votación del Equipo</h4>
+                <div class="entrada-meta">Participantes: Yael Rosas, Mateo Moreno y Christian G. | 20 de noviembre de 2026</div>
+                <p class="entrada-texto">
+                    Resultados de nuestra sesión colaborativa en pizarra digital para definir los temas principales del blog (haz clic en la imagen para ampliarla):
+                </p>
+                <img src="img/pizarra_blog.jpg" alt="Pizarra digital de lluvia de ideas y votación" class="pizarra-preview galeria-item">
+            </article>
         </div>
+    </div>
+
+    <!-- Ventana Emergente Modal para ampliar la pizarra al darle clic -->
+    <div id="modalVentana" class="modal">
+        <span class="cerrar-modal">&times;</span>
+        <img class="modal-contenido" id="imagenModalSrc" alt="Pizarra ampliada">
     </div>
 
     <!-- Botones de Navegación -->
@@ -105,5 +138,7 @@
         <a href="carrusel.html" class="btn btn-azul">Evidencias y Gráfica</a>
     </div>
 
+    <!-- Reutiliza tu script de ventana emergente -->
+    <script src="galeria.js"></script>
 </body>
 </html>
